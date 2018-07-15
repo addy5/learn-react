@@ -1,6 +1,7 @@
 # Logs
 logs
 *.Logs
+*.log
 
 # Compiled directory and file
 build/
