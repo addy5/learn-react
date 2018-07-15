@@ -8,7 +8,7 @@ class NavBar extends Component {
     return (
       <div className="banner jumbotron">
         <div className="container">
-          <h1 className="display-3">WeeHeart Radio</h1>
+          <h1 className="display-3">BeeHeart Radio</h1>
           <p>
             Browse the latest trending music!
           </p>

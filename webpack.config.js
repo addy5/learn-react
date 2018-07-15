@@ -16,6 +16,16 @@ module.exports = {
         loader: 'style-loader!css-loader'
       },
       {
+        test: /\.scss$/,
+          use: [{
+            loader: "style-loader"
+          }, {
+            loader: "css-loader"
+          }, {
+            loader: "sass-loader"
+          }]
+      },
+      {
         test: /\.png$/,
         loader: 'url-loader?limit=100000&minetype=image/png'
       },
@@ -26,7 +36,7 @@ module.exports = {
       {
         test : /\.jsx?/,
         include : SRC_DIR,
-        loader : 'babel-loader',      
+        loader : 'babel-loader',
         query: {
           presets: ['react', 'es2015']
        }
