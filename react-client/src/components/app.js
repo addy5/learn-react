@@ -6,7 +6,6 @@ import $ from 'jquery';
 
 import DataFactory from './dataComponent/MusicData';
 import Grid from './gridComponent/grid.js';
-import AddProject from './pages/AddProject';
 import NavBar from './navComponent/navBar';
 import Banner from './bannerComponent/banner';
 import Footer from './footerComponent/footer.js';

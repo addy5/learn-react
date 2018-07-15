@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 
 class ItemTile extends Component {
-  deleteProject(id){
-    this.props.onDelete(id);
-    console.log('testing delete' + id);
-  }
-
   render() {
-    console.log(this.props.project);
     return (
       <div className="col-md-4 col-sm-6">
         <div className="card mb-4 box-shadow">
@@ -22,9 +16,6 @@ class ItemTile extends Component {
                 <span className="trunc">{this.props.project.artist}
                 </span>
               </p>
-                {/*<a href="#" onClick={this.deleteProject.bind(this, this.props.project.id)}>
-                  ℹ
-                </a>*/}
             </div>
           </div>
         </div>
