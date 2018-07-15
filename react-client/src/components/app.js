@@ -15,9 +15,11 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-        projects : [],
+        allRecords: [],
+        projects: [],
         artists: {},
-        category: {}
+        category: {},
+        query: ''
     }
   }
 
@@ -26,6 +28,7 @@ class App extends Component {
         let data = factory.getHits().then(data => {
           this.setState({projects: data.hits});
           this.setState({artists: data.artists});
+          this.setState({allRecords: data.hits});
           this.setState({category: data.categories});
           $('#skeleton').fadeOut(250);
 
@@ -41,27 +44,24 @@ class App extends Component {
     this.setAppData();
   }
 
-  handleAddProject(project){
-    let projects = this.state.projects;
-    projects.push(project);
-    this.setState({projects:projects});
-  }
+  searchHits(query){
+    this.state.query = query.toLowerCase();
+    let matches = this.state.allRecords.filter(data => {
+      var jsonString = JSON.stringify(data).toLowerCase();
 
-  handleDeleteProject(id){
-    let projects = this.state.projects;
-    let index = projects.findIndex(x => x.id === id);
-    projects.splice(index, 1);
-    this.setState({projects:projects});
-    console.log(projects)
+      return jsonString.indexOf(this.state.query) !== -1;
+    });
+
+    this.setState({projects:matches});
   }
 
   render() {
     return (
       <Router>
         <div>
-          <NavBar />
+          <NavBar onSearch={this.searchHits.bind(this)}/>
           <Banner />
-          <Grid projects={this.state.projects} onDelete={this.handleDeleteProject.bind(this)}/>
+          <Grid query={this.state.query} projects={this.state.projects}/>
           <Footer />
         </div>
       </Router>

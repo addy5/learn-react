@@ -9,7 +9,7 @@ class Banner extends Component {
         <div className="container">
           <h1 className="display-3">BeeHeart Radio</h1>
           <p>
-            Browse the latest trending music!
+            Browse the latest trending music! Sign up today and get updated when new hits are added =)
           </p>
 
         </div>

@@ -3,15 +3,37 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
 class NavBar extends Component {
-  render() {
+  constructor() {
+    super();
+    this.state = {
+      search: null,
+    };
 
+    this.handleSearch = this.handleSearch.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange({ target }){
+    this.setState({
+      search: target.value
+    });
+  }
+
+  handleSearch(){
+    this.props.onSearch(this.state.search);
+  }
+
+  render() {
     return (
-          <nav className="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-            <div className="col-sm-6">
-              <form className="form-inline">
-                <input className="search form-control" type="search" placeholder="Audiophile seeking.." aria-label="Search" />
-                <button className="btn search my-2 my-sm-0" type="submit">Search</button>
-              </form>
+          <nav className="navbar navbar-toggleable-md navbar-inverse fixed-top">
+            <div className="col-sm-9">
+              <div className="form-inline">
+                <a href="/">
+                  <img className="logo" src="../../assets/pin.png" alt="" width="24" height="24" />
+                </a>
+                <input className="search form-control" onChange={ this.handleChange }  type="search" placeholder="Search.." aria-label="Search" />
+                <button className="btn search my-2 my-sm-0" type="" onClick={this.handleSearch}>&#x1F50D;</button>
+              </div>
             </div>
 
             <div className="collapse navbar-collapse">

@@ -1,13 +1,21 @@
 .banner {
     color: white;
-    position: relative;
-    top: 20px;
     background-image: url(https://a-v2.sndcdn.com/assets/images/home/hp_image@2x-ae2160d.jpg);
     background-size: auto;
     background-repeat: no-repeat;
     border-radius: 0 !important;
+    margin: 0 auto;
 
     @media screen and (min-width: 576px) {
-      padding: 6rem 2rem !important;
+      padding: 7rem 2rem !important;
     }
+}
+
+.navbar {
+  padding: .8rem 1rem !important;
+  background-color: black;
+
+  .logo{
+    margin-right: 15px;
+  }
 }

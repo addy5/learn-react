@@ -19,13 +19,17 @@ class Grid extends Component {
         );
     }
 
-    if(this.props.projects){
+    if(this.props.projects.length){
       items = this.props.projects.map(project => {
           return(
                   <ItemTile onDelete={this.deleteProject.bind(this)} key={project.title} project={project}/>
           )
       });
+    } else {
+      items = 'No results found';
     }
+
+    let title = this.props.query ? "Results for '" + this.props.query + "'" : 'Current Top Hits';
 
     return (
       <div className="row">
@@ -33,7 +37,7 @@ class Grid extends Component {
         <div className="col-md-9 col-sm-12 album bg-light">
           <div className="container">
             <div className="text-center row">
-              <h3 className="grid-title">Current Top Hits</h3>
+              <h3 className="grid-title">{title}</h3>
             </div>
             <div id="skeleton" className="row">
               {skeleton}
