@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ItemTile from './ItemTile';
 import SideBar from './SideBar';
 
-class HomePage extends Component {
+class Grid extends Component {
   deleteProject(id){
     this.props.onDelete(id);
   }
@@ -36,9 +36,9 @@ class HomePage extends Component {
   }
 }
 
-HomePage.propTypes = {
+Grid.propTypes = {
     projects: React.PropTypes.array,
     onDelete: React.PropTypes.func
 }
 
-export default HomePage;
+export default Grid;
