@@ -34,7 +34,7 @@ class Grid extends Component {
     return (
       <div className="row">
         <SideBar />
-        <div className="col-md-9 col-sm-12 album bg-light">
+        <div className="col-lg-9 col-sm-12 album bg-light">
           <div className="container">
             <div className="text-center row">
               <h3 className="grid-title">{title}</h3>
