@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import '../../dist/styles.scss';
 
+import $ from 'jquery';
+
 import DataFactory from './dataComponent/MusicData';
 import Grid from './gridComponent/grid.js';
 import AddProject from './pages/AddProject';
@@ -25,6 +27,7 @@ class App extends Component {
           this.setState({projects: data.hits});
           this.setState({artists: data.artists});
           this.setState({category: data.categories});
+          $('#skeleton').fadeOut(250);
 
           return data;
         }).catch(err => {return err});

@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.resolve(`${__dirname}/../react-client/dist/index.html`));
 });
 
-// see if this works
+// serve img from dev
 app.get('/assets/pin.png', (req, res) => {
   res.sendFile(path.resolve(`${__dirname}/../react-client/assets/pin.png`));
 });

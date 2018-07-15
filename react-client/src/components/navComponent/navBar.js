@@ -7,11 +7,14 @@ class NavBar extends Component {
 
     return (
           <nav className="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-            <a className="navbar-brand" href="#">Navbar</a>
-            <a className="navbar-brand" href="#">Home</a>
-            <a className="navbar-brand" href="#">Trending</a>
+            <div className="col-sm-6">
+              <form className="form-inline">
+                <input className="search form-control" type="search" placeholder="Audiophile seeking.." aria-label="Search" />
+                <button className="btn search my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
 
-            <div className="collapse navbar-collapse" id="navbarsExampleDefault">
+            <div className="collapse navbar-collapse">
                <ul className="navbar-nav mr-auto">
                </ul>
 

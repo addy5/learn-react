@@ -1,3 +1,5 @@
+$light: #e3eeef;
+
 .sign-in{
   font-size: 13px;
   background: 0 0;
@@ -19,4 +21,18 @@
   padding: 0 16px;
   box-sizing: border-box;
   border-radius: 3px;
+}
+
+button.search{
+  height: 30px;
+  font-size: 12px;
+  color: $light;
+  background-image: none;
+  background-color: transparent;
+  border-color: $light;
+}
+
+input.search{
+  padding-top: 5px;
+  padding-bottom: 5px;
 }

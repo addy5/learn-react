@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ItemTile from './ItemTile';
 import SideBar from './SideBar';
+import Placeholder from './Placeholder';
 
 class Grid extends Component {
   deleteProject(id){
@@ -9,6 +10,14 @@ class Grid extends Component {
 
   render() {
     let items;
+    let skeleton = [];
+    var counter = 9;
+
+    while(counter--){
+        skeleton.push(
+          <Placeholder />
+        );
+    }
 
     if(this.props.projects){
       items = this.props.projects.map(project => {
@@ -25,6 +34,9 @@ class Grid extends Component {
           <div className="container">
             <div className="text-center row">
               <h3 className="grid-title">Current Top Hits</h3>
+            </div>
+            <div id="skeleton" className="row">
+              {skeleton}
             </div>
             <div className="row">
               {items}

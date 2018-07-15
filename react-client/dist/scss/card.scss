@@ -1,3 +1,5 @@
+$placeholder-color: #a3a7a9;
+
 .card {
     text-align: center;
 
@@ -44,4 +46,11 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.place-card {
+  background-color: lightgray;
+  height: 280px;
+  border-radius: 3px;
+  margin: auto;
 }
