@@ -26,8 +26,9 @@ header {
     position: relative;
     top: 20px;
     background-image: url(https://a-v2.sndcdn.com/assets/images/home/hp_image@2x-ae2160d.jpg);
-background-size: auto;
-background-repeat: no-repeat;
+    background-size: auto;
+    background-repeat: no-repeat;
+    border-radius: 0 !important;
 }
 
 @media (min-width: 576px) {
@@ -45,9 +46,34 @@ background-repeat: no-repeat;
     text-align: center;
 }
 
+.card:hover .card-img-top{
+  -webkit-filter: brightness(20%);
+  -moz-filter: brightness(20%);
+  -o-filter: brightness(20%);
+  -ms-filter: brightness(20%);
+  filter: brightness(20%);
+}
+
+.overlay{
+  display: none;
+}
+
+.card:hover .overlay {
+    display: block;
+    position: absolute;
+    color: white;
+    z-index: 100;
+    font-size: 1.3rem;
+    padding: 2rem 1rem;
+    overflow: scroll;
+    text-align: center;
+    width: 100%;
+}
+
 .card-text {
-  max-height: 65px;
   margin: 5px auto;
+  max-height: 65px;
+  padding: 10px;
 }
 
 .d-flex {
@@ -86,15 +112,8 @@ background-repeat: no-repeat;
 }
 
 .card-img-top{
-  height: 170px;
-  width: 170px;
+  width: 100%;
   overflow: hidden;
-  margin: 25px auto;
-}
-
-.card-text {
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 #footer-container {

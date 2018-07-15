@@ -43,17 +43,20 @@ class App extends Component {
         let categories = {};
 
         data.feed.entry.forEach(function(hit){
-          var artist =  hit['im:artist'].label;
+          var artist =  hit['im:artist']['label'];
           var category = hit['category']['attributes']['label'];
-          var img = hit['im:image'].length ? hit['im:image'][2].label : '';
+          var img = hit['im:image'][2]['label'].replace('170x170bb', '300x300bb');
 
           hits.push({
             artist:artist,
-            id: hit.id.label,
+            count:hit['im:itemCount']['label'],
+            genre: hit['category']['attributes']['label'],
+            id: hit['id']['label'],
             img: img,
-            price: hit['im:price'].label,
-            title: hit['im:name'].label
+            price: hit['im:price']['label'],
+            title: hit['im:name']['label']
           })
+
 
           if(artists[artist]){
             artists[artist] = artists[artist] + 1;
@@ -70,6 +73,12 @@ class App extends Component {
 
         console.log(data);
         this.setState({projects: hits});
+
+        $('body').on('hover','.card',function () {
+            $(this).addClass('hover');
+        }, function () {
+            $(this).removeClass('hover');
+        });
       }.bind(this),
       error: function(xhr, status, err) {
           console.log('error!!!');
