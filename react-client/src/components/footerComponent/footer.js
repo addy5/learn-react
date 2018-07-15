@@ -1,7 +1,26 @@
 import React, { Component } from 'react';
+import FooterItem from './footerItem';
 
 class Footer extends Component {
   render() {
+    let resources = [
+      {value: 'Resource', href:'#'},
+      {value: 'Resource name', href:'#'},
+      {value: 'Another resource', href:'#'},
+      {value: 'Final resource', href:'#'}
+    ].map(function(data){
+      return <FooterItem line={data} />
+    });
+
+    let about = [
+      {value: 'Team', href:'#'},
+      {value: 'Locations', href:'#'},
+      {value: 'Privacy', href:'#'},
+      {value: 'Terms', href:'#'}
+    ].map(function(data){
+      return <FooterItem line={data} />
+    });
+
     return (
       <div id="footer-container">
       <footer className="pt-4 border-top col-md-9">
@@ -13,19 +32,13 @@ class Footer extends Component {
             <div className="col-6 col-md">
               <h5 className="text-white">Resources</h5>
               <ul className="list-unstyled text-small">
-                <li><a className="text-muted" href="#">Resource</a></li>
-                <li><a className="text-muted" href="#">Resource name</a></li>
-                <li><a className="text-muted" href="#">Another resource</a></li>
-                <li><a className="text-muted" href="#">Final resource</a></li>
+                {resources}
               </ul>
             </div>
             <div className="col-6 col-md">
               <h5 className="text-white">About</h5>
               <ul className="list-unstyled text-small">
-                <li><a className="text-muted" href="#">Team</a></li>
-                <li><a className="text-muted" href="#">Locations</a></li>
-                <li><a className="text-muted" href="#">Privacy</a></li>
-                <li><a className="text-muted" href="#">Terms</a></li>
+                {about}}
               </ul>
             </div>
           </div>
