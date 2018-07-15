@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import { browserHistory } from 'react-router';
+import Skeleton from 'react-loading-skeleton';
+
 import uuid from 'uuid';
 import $ from 'jquery';
 
@@ -71,7 +73,7 @@ class App extends Component {
           }
         });
 
-        console.log(data);
+        console.log(data.feed.entry);
         this.setState({projects: hits});
 
         $('body').on('hover','.card',function () {
@@ -114,7 +116,7 @@ class App extends Component {
         <div>
           <NavBar />
           <Header />
-          <HomePage projects={this.state.projects} onDelete={this.handleDeleteProject.bind(this)}/>
+          <HomePage projects={this.state.projects || <Skeleton />} onDelete={this.handleDeleteProject.bind(this)}/>
           <Footer />
         </div>
       </Router>
