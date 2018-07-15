@@ -6,6 +6,8 @@ import Skeleton from 'react-loading-skeleton';
 import uuid from 'uuid';
 import $ from 'jquery';
 
+import '../../dist/styles.scss';
+
 import HomePage from './pages/homePage.js';
 import AddProject from './pages/AddProject';
 import Header from './Header.js';
@@ -75,12 +77,6 @@ class App extends Component {
 
         console.log(data.feed.entry);
         this.setState({projects: hits});
-
-        $('body').on('hover','.card',function () {
-            $(this).addClass('hover');
-        }, function () {
-            $(this).removeClass('hover');
-        });
       }.bind(this),
       error: function(xhr, status, err) {
           console.log('error!!!');

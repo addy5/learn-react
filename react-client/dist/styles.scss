@@ -1,0 +1,19 @@
+@import './scss/button';
+@import './scss/card';
+@import './scss/footer';
+@import './scss/header';
+
+@font-face {
+    font-family: 'Roboto', sans-serif;
+    src: url(https://fonts.googleapis.com/css?family=Roboto) format('truetype');
+}
+
+html *
+{
+   font-family: 'Roboto', sans-serif;
+}
+
+.grid-title{
+  padding: 10px 20px;
+  font-size: 3rem;
+}
