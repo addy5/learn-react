@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class Placeholder extends Component {
   render() {
     return (
-      <div className="col-md-4 col-sm-6">
-        <div className="place-card mb-4 box-shadow">
+      <div className="col-md-6 col-lg-4 col-sm-12">
+        <div className="place-card box-shadow">
 
         </div>
       </div>
