@@ -40,7 +40,7 @@ class App extends Component {
     });
 
     // touch enabled devices
-    $('.menu').on('touchstart', burgerSelector, function(){
+    $('body').on('touchstart', burgerSelector, function(){
       scopeSelf.toggleMobileExpand();
     });
 
