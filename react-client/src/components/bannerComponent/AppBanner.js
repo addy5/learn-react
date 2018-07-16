@@ -7,7 +7,7 @@ class Banner extends Component {
     return (
       <div className="banner jumbotron">
         <div className="container">
-          <h1 className="display-3">BeeHeart Radio</h1>
+          <h1 className="display-3">BeeTunes Radio</h1>
           <p>
             Browse the latest trending music! Sign up today and get updated when new hits are added =)
           </p>
