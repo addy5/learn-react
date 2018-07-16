@@ -27,10 +27,21 @@ class App extends Component {
   // add custom jquery/js for any exception handlers
   // todo: remove
   handleCustomJquery(){
+    // hamburger handler
     $('body').on('click','.burger',function(){
       console.log()
         $('.user-wrapper').toggleClass('show');
     });
+
+    // unsupported browser check
+    var $buoop = {required:{e:-1,f:-6,o:-1,s:-2,c:-6},insecure:true,api:2018.07 };
+    function $buo_f(){
+     var e = document.createElement("script");
+     e.src = "//browser-update.org/update.min.js";
+     document.body.appendChild(e);
+    };
+    try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+    catch(e){window.attachEvent("onload", $buo_f)}
   }
 
   // initialize data
