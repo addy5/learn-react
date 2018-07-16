@@ -7,7 +7,8 @@ import Banner from './bannerComponent/AppBanner';
 import DataFactory from './dataComponent/MusicData';
 import Footer from './footerComponent/Footers.js';
 import Grid from './gridComponent/ItemGrid.js';
-import NavBar from './navComponent/navBar';
+import NavBar from './navComponent/MainNav';
+import SideBar from './filterComponent/SideFilter';
 
 class App extends Component {
   constructor() {
@@ -43,7 +44,23 @@ class App extends Component {
     this.setAppData();
   }
 
-  // test query against all entries stored
+  // filter results
+  filterHits(data){
+    let type = data['type'];
+    let value = data['value'];
+
+    // set value as search
+    this.setState({query: value});
+
+    // find matches
+    let matches = this.state.allRecords.filter(data => {
+      return data[type] === value;
+    });
+
+    this.setState({projects:matches});
+  }
+
+  // test query against all entries stored (just do a string string match)
   searchHits(query){
     this.state.query = query.toLowerCase();
     let matches = this.state.allRecords.filter(data => {
@@ -61,7 +78,10 @@ class App extends Component {
         <div>
           <NavBar onSearch={this.searchHits.bind(this)}/>
           <Banner />
-          <Grid artists={this.state.artists} categories={this.state.categories} query={this.state.query} projects={this.state.projects}/>
+          <div className="row">
+            <SideBar filterWithParams={this.filterHits.bind(this)} categories={this.state.categories} artists={this.state.artists}/>
+            <Grid artists={this.state.artists} categories={this.state.categories} query={this.state.query} projects={this.state.projects}/>
+          </div>
           <Footer />
         </div>
       </Router>

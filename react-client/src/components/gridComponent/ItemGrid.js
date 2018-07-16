@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ItemTile from './ItemTile';
-import SideBar from './SideFilter';
 import Placeholder from './Placeholder';
 
 class Grid extends Component {
@@ -28,8 +27,6 @@ class Grid extends Component {
     let title = this.props.query ? "Results for '" + this.props.query + "'" : 'Current Top Hits';
 
     return (
-      <div className="row">
-        <SideBar categories={this.props.categories} artists={this.props.artists}/>
         <div className="col-lg-9 col-sm-12 album bg-light">
           <div className="container">
             <div className="text-center row">
@@ -43,7 +40,6 @@ class Grid extends Component {
             </div>
           </div>
         </div>
-      </div>
     )
   }
 }

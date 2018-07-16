@@ -21,7 +21,7 @@ class DataFactory {
             hits.push({
               artist:artist,
               count:hit['im:itemCount']['label'],
-              genre: hit['category']['attributes']['label'],
+              category: hit['category']['attributes']['label'],
               id: hit['id']['label'],
               img: img,
               price: hit['im:price']['label'],

@@ -18,8 +18,9 @@
     }
 
     li {
-      a {
+      p {
         display: inline-block;
+        margin: 0;
         width: 100%;
         color: white;
         text-indent: 20px;
@@ -27,6 +28,11 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        cursor: pointer;
+
+        &:hover {
+          color: grey;
+        }
       }
 
 

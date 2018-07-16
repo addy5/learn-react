@@ -16,4 +16,8 @@ body {
   margin-top: 1rem;
   padding: 10px 20px;
   font-size: 3rem;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
