@@ -3,6 +3,9 @@ logs
 *.Logs
 *.log
 
+# mac stuff
+*.DS_Store
+
 # Compiled directory and file
 build/
 bundle.js
