@@ -18,6 +18,8 @@
     }
 
     li {
+      text-decoration: none;
+
       a {
         display: inline-block;
         margin: 0;
@@ -32,12 +34,6 @@
         &:hover {
           color: grey;
         }
-      }
-
-
-      &:hover {
-        text-decoration: none;
-        color: grey;
       }
     }
   }

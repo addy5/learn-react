@@ -71,7 +71,7 @@ class App extends Component {
     let type = data['type'];
     let value = data['value'];
 
-    // set value as search
+    // set value as query
     this.setState({query: value});
 
     // find matches
@@ -84,6 +84,9 @@ class App extends Component {
 
   // test query against all entries stored (just do a string string match)
   searchHits(query){
+    if(!query){
+      return;
+    }
     this.state.query = query.toLowerCase();
     let matches = this.state.allRecords.filter(data => {
       var jsonString = JSON.stringify(data).toLowerCase();
