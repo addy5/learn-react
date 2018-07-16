@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class ItemTile extends Component {
   render() {
     return (
-      <div className="col-md-6 col-sm-12">
-        <div className="card box-shadow">
+      <div className="col-md-4 col-sm-6 col-xs-12">
+        <div className="card mb-4 box-shadow">
             <h2 className="overlay"><p>{this.props.project.category}</p>
             <p>{this.props.project.count} songs</p>
             <a target="_blank" href={this.props.project.id} className="btn btn-sm btn-outline-secondary">{this.props.project.price} on iTunes</a>
