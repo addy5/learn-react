@@ -4,10 +4,6 @@ import SideBar from './SideFilter';
 import Placeholder from './Placeholder';
 
 class Grid extends Component {
-  deleteProject(id){
-    this.props.onDelete(id);
-  }
-
   render() {
     let items;
     let skeleton = [];
@@ -22,7 +18,7 @@ class Grid extends Component {
     if(this.props.projects.length){
       items = this.props.projects.map(project => {
           return(
-                  <ItemTile onDelete={this.deleteProject.bind(this)} key={project.title} project={project}/>
+                  <ItemTile key={project.title} project={project}/>
           )
       });
     } else {
@@ -33,11 +29,11 @@ class Grid extends Component {
 
     return (
       <div className="row">
-        <SideBar />
+        <SideBar categories={this.props.categories} artists={this.props.artists}/>
         <div className="col-lg-9 col-sm-12 album bg-light">
           <div className="container">
             <div className="text-center row">
-              <h3 className="grid-title">{title}</h3>
+              <h3 className="grid-title"><strong>{title}</strong></h3>
             </div>
             <div id="skeleton" className="row">
               {skeleton}
@@ -53,8 +49,7 @@ class Grid extends Component {
 }
 
 Grid.propTypes = {
-    projects: React.PropTypes.array,
-    onDelete: React.PropTypes.func
+    projects: React.PropTypes.array
 }
 
 export default Grid;

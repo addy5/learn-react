@@ -5,10 +5,10 @@ import '../../dist/styles.scss';
 import $ from 'jquery';
 
 import DataFactory from './dataComponent/MusicData';
-import Grid from './gridComponent/grid.js';
+import Grid from './gridComponent/Grid.js';
 import NavBar from './navComponent/navBar';
 import Banner from './bannerComponent/banner';
-import Footer from './footerComponent/footer.js';
+import Footer from './footerComponent/Footer.js';
 
 class App extends Component {
   constructor() {
@@ -17,18 +17,19 @@ class App extends Component {
         allRecords: [],
         projects: [],
         artists: {},
-        category: {},
+        categories: {},
         query: ''
     }
   }
 
+  // initialize data
   setAppData(){
         let factory = new DataFactory();
         let data = factory.getHits().then(data => {
           this.setState({projects: data.hits});
           this.setState({artists: data.artists});
           this.setState({allRecords: data.hits});
-          this.setState({category: data.categories});
+          this.setState({categories: data.categories});
           $('#skeleton').fadeOut(250);
 
           return data;
@@ -43,6 +44,7 @@ class App extends Component {
     this.setAppData();
   }
 
+  // test query against all entries stored
   searchHits(query){
     this.state.query = query.toLowerCase();
     let matches = this.state.allRecords.filter(data => {
@@ -60,7 +62,7 @@ class App extends Component {
         <div>
           <NavBar onSearch={this.searchHits.bind(this)}/>
           <Banner />
-          <Grid query={this.state.query} projects={this.state.projects}/>
+          <Grid artists={this.state.artists} categories={this.state.categories} query={this.state.query} projects={this.state.projects}/>
           <Footer />
         </div>
       </Router>

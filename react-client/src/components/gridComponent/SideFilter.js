@@ -2,15 +2,18 @@ import React, { Component } from 'react';
 
 class SideBar extends Component {
   render() {
-    let items;
+    console.log(this.props);
+    let artists;
 
-    if(this.props.projects){
-      items = this.props.projects.map(project => {
-          return(
-                  <ItemTile onDelete={this.deleteProject.bind(this)} key={project.title} project={project}/>
-          )
-      });
-    }
+    // if(this.props.artists){
+    //   artists = this.props.artists.map(artist => {
+    //       return(
+    //         <li>
+    //             <a href="#">artist</a>
+    //         </li>
+    //       )
+    //   });
+    // }
 
     return (
         <div className="col-md-3 hidden-md-down">
