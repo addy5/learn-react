@@ -24,12 +24,24 @@ class App extends Component {
     this.handleCustomJquery();
   }
 
+  toggleMobileExpand(){
+    $('.user-wrapper').toggleClass('show');
+  }
+
   // add custom jquery/js for any exception handlers
   // todo: remove
   handleCustomJquery(){
+    let scopeSelf = this;
+    let burgerSelector = '.burger';
+
     // hamburger handler
-    $('body').on('click','.burger',function(){
-        $('.user-wrapper').toggleClass('show');
+    $('body').on('click' ,burgerSelector, function(){
+      scopeSelf.toggleMobileExpand();
+    });
+
+    // touch enabled devices
+    $('.menu').on('touchstart', burgerSelector, function(){
+      scopeSelf.toggleMobileExpand();
     });
 
     // unsupported browser check
