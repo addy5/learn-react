@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { polyfill } from 'es6-promise'; polyfill();
 
 class DataFactory {
   getHits(){
