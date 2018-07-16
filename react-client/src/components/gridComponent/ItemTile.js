@@ -5,8 +5,8 @@ class ItemTile extends Component {
     return (
       <div className="col-md-4 col-sm-6">
         <div className="card mb-4 box-shadow">
-            <h2 className="overlay"><p>Genre: {this.props.project.genre}</p>
-            <p>Songs: {this.props.project.count}</p>
+            <h2 className="overlay"><p>{this.props.project.genre}</p>
+            <p>{this.props.project.count} songs</p>
             <a target="_blank" href={this.props.project.id} className="btn btn-sm btn-outline-secondary">{this.props.project.price} on iTunes</a>
             </h2>
             <img className="card-img-top" src={this.props.project.img} alt="Card image cap" />

@@ -32,7 +32,7 @@ class NavBar extends Component {
   render() {
     return (
           <nav className="navbar navbar-toggleable-md navbar-inverse fixed-top">
-            <div className="col-sm-9">
+            <div className="col-sm-9 col-xs-8">
               <form onSubmit={this.handleSubmit} className="form-inline">
                 <a href="/">
                   <img className="logo" src="../../assets/pin.png" alt="" width="24" height="24" />

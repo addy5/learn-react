@@ -1,9 +1,11 @@
 $light: #e3eeef;
+$orange: #f50;
 
 .sign-in{
   font-size: 13px;
   background: 0 0;
   color: #fff;
+  height: 30px;
   border-color: #ccc;
   border: 1px solid #e5e5e5;
   border-radius: 3px;
@@ -12,9 +14,9 @@ $light: #e3eeef;
 
 .join {
   font-size: 13px;
-  background-color: #f50;
-  border-color: #f50;
-  color: #fff;
+  background-color:$orange;
+  border-color: $orange;
+  color: $light;
   height: 30px;
   padding: 0 16px;
   height: 30px;
