@@ -20,6 +20,17 @@ class App extends Component {
         categories: {},
         query: ''
     }
+
+    this.handleCustomJquery();
+  }
+
+  // add custom jquery/js for any exception handlers
+  // todo: remove
+  handleCustomJquery(){
+    $('body').on('click','.burger',function(){
+      console.log()
+        $('.user-wrapper').toggleClass('show');
+    });
   }
 
   // initialize data

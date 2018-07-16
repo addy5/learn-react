@@ -1,0 +1,40 @@
+@import './constants';
+
+.navbar {
+  padding: .8rem 1rem !important;
+  background-color: black;
+
+  .logo{
+    margin-right: 15px;
+  }
+}
+
+.burger {
+  display: inline-block;
+  position: absolute;
+  right: 1rem;
+
+  @media screen and (min-width: $mobile-size) {
+    display: none;
+  }
+
+  div {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+  }
+}
+
+.user-wrapper {
+  text-align: right;
+  @media screen and (max-width: $mobile-size) {
+    padding: 20px 0 10px 0;
+    display: none;
+  }
+}
+
+.show{
+  display: inline-block;
+  width: 100%
+}

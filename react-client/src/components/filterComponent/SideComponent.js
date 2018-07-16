@@ -31,9 +31,9 @@ class SideComponent extends Component {
 
         list.push(
           <li className="sidebar-brand">
-            <p onClick={handleClick}>
+            <a href="#" onClick={handleClick}>
                 {value} ({count})
-            </p>
+            </a>
           </li>
         );
       });
