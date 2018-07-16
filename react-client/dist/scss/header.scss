@@ -8,10 +8,11 @@
     border-radius: 0 !important;
     margin: 0 auto;
     padding: 7rem 2rem !important;
+    h1{
+        font-weight: 600 !important;
 
-    @media screen and (max-width: $mobile-size) {
-      h1 {
-        font-size: 4rem;
-      }
+        @media screen and (max-width: $mobile-size) {
+            font-size: 4rem;
+        }
     }
 }
