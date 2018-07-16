@@ -3,12 +3,11 @@ import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import '../../dist/styles.scss';
 
 import $ from 'jquery';
-
+import Banner from './bannerComponent/banner';
 import DataFactory from './dataComponent/MusicData';
+import Footer from './footerComponent/Footer.js';
 import Grid from './gridComponent/Grid.js';
 import NavBar from './navComponent/navBar';
-import Banner from './bannerComponent/banner';
-import Footer from './footerComponent/Footer.js';
 
 class App extends Component {
   constructor() {
