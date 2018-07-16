@@ -27,5 +27,5 @@ ToDo(s)
 - Migrate to a dispatcher, reducer model to clean up code.
 - Find a better bootstrap template for cleaner look and CSS transitions.
 
-![Desktop]("https://raw.githubusercontent.com/addy5/learn-react/master/desktop.png")
-![Mobile]("https://raw.githubusercontent.com/addy5/learn-react/master/mobile.png")
+![Desktop](https://raw.githubusercontent.com/addy5/learn-react/master/desktop.png "Desktop Demo Diagram")
+![Mobile](https://raw.githubusercontent.com/addy5/learn-react/master/mobile.png "Mobile Demo Diagram")
