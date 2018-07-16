@@ -29,7 +29,6 @@ class App extends Component {
   handleCustomJquery(){
     // hamburger handler
     $('body').on('click','.burger',function(){
-      console.log()
         $('.user-wrapper').toggleClass('show');
     });
 
