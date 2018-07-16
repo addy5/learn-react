@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import '../../dist/styles.scss';
 
 import $ from 'jquery';
-import Banner from './bannerComponent/banner';
+import Banner from './bannerComponent/AppBanner';
 import DataFactory from './dataComponent/MusicData';
-import Footer from './footerComponent/Footer.js';
-import Grid from './gridComponent/Grid.js';
+import Footer from './footerComponent/Footers.js';
+import Grid from './gridComponent/ItemGrid.js';
 import NavBar from './navComponent/navBar';
 
 class App extends Component {
