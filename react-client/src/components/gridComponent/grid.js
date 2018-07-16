@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ItemTile from './ItemTile';
-import SideBar from './SideBar';
+import SideBar from './Sidebar';
 import Placeholder from './Placeholder';
 
 class Grid extends Component {
