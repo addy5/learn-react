@@ -15,8 +15,8 @@ class SideBar extends Component {
     return (
         <div className="col-md-3 hidden-md-down">
           <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
+            <ul className="sidebar-nav">
+                <li className="sidebar-brand">
                     <a href="#">
                         Start Bootstrap
                     </a>
