@@ -1,50 +1,26 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
+import SideComponent from './SideComponent';
 
 class SideBar extends Component {
   render() {
-    console.log(this.props);
-    let artists;
+    let artists = [];
+    let categories= [];
 
-    // if(this.props.artists){
-    //   artists = this.props.artists.map(artist => {
-    //       return(
-    //         <li>
-    //             <a href="#">artist</a>
-    //         </li>
-    //       )
-    //   });
-    // }
+    if(this.props.artists){
+     artists = <SideComponent list={this.props.artists} title='Artists'/>
+    }
+
+    if(this.props.categories){
+     categories = <SideComponent list={this.props.categories} title='Categories'/>
+    }
 
     return (
-        <div className="col-md-3 hidden-md-down">
-          <div id="sidebar-wrapper">
-            <ul className="sidebar-nav">
-                <li className="sidebar-brand">
-                    <a href="#">
-                        Start Bootstrap
-                    </a>
-                </li>
-                <li>
-                    <a href="#">Dashboard</a>
-                </li>
-                <li>
-                    <a href="#">Shortcuts</a>
-                </li>
-                <li>
-                    <a href="#">Overview</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
+        <div className='col-md-3 hidden-md-down'>
+          <div id='sidebar-wrapper'>
+            <ul className='sidebar-nav'>
+                {artists}
+                {categories}
             </ul>
         </div>
         </div>
